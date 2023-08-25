@@ -6,12 +6,12 @@ use Livewire\Component;
 
 class MaskComponent extends Component
 {
-    public string $id = 'value';
-    public string $name = 'value';
+    public $maskId = 'value';
+    public $maskName = 'value';
 
-    public string $class = 'input input-bordered w-full';
+    public $class = 'input input-bordered w-full';
 
-    public bool $required = false;
+    public $required = false;
     
     public $value;
     public $maskedValue;
