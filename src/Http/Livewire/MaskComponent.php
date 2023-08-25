@@ -12,13 +12,13 @@ class MaskComponent extends Component
     public $class = 'input input-bordered w-full';
 
     public $required = false;
-    
+
     public $value;
     public $maskedValue;
 
 
     public function updatedMaskedValue($value)
     {
-        $this->emit($this->maskId.'-valueUpdated', ['value' => $value]);
+        $this->dispatchBrowserEvent($this->maskId.'-valueUpdated', ['value' => $value]);
     }
 }
