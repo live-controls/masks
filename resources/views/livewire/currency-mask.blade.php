@@ -1,7 +1,7 @@
 <div>
     <script type="text/javascript">
-        window.{{ $id }}mask = IMask(
-            document.getElementById('{{ $id }}'),
+        window.{{ $maskId }}mask = IMask(
+            document.getElementById('{{ $maskId }}'),
             {
                 mask: '{{ $currencyString }}num',
                 blocks: {
@@ -19,18 +19,18 @@
 
         document.addEventListener("DOMContentLoaded", () => {
             @if(!is_null($value))
-                window.{{ $id }}mask.value = "{{ $value }}";
+                window.{{ $maskId }}mask.value = "{{ $value }}";
             @endif
         });
 
-        Livewire.on('{{ $id }}-valueUpdated', value => {
-            @this.value = window.{{ $id }}mask.unmaskedValue;
+        Livewire.on('{{ $maskId }}-valueUpdated', value => {
+            @this.value = window.{{ $maskId }}mask.unmaskedValue;
         });
     </script>
 
     <input
-        id="{{ $id }}"
-        name="{{ $name }}"
+        id="{{ $maskId }}"
+        name="{{ $maskName }}"
         type="text"
         class="{{ $class }}"
         wire:model.debounce.250ms='maskedValue'
