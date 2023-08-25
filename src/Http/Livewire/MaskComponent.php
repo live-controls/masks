@@ -19,6 +19,6 @@ class MaskComponent extends Component
 
     public function updatedMaskedValue($value)
     {
-        $this->emit($this->id.'-valueUpdated', ['value' => $value]);
+        $this->emit($this->maskId.'-valueUpdated', ['value' => $value]);
     }
 }
