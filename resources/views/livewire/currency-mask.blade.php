@@ -3,14 +3,14 @@
         window.{{ $id }}mask = IMask(
             document.getElementById('{{ $id }}'),
             {
-                mask: '$num',
+                mask: '{{ $currencyString }}num',
                 blocks: {
                     num: {
                         mask: Number,
                         scale: 2,
                         padFractionalZeros: true,
-                        thousandsSeparator: '.',
-                        radix: ',',
+                        thousandsSeparator: ',',
+                        radix: '.',
                         mapToRadix: []
                     }
                 }
