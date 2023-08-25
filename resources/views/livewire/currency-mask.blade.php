@@ -4,7 +4,7 @@
         name="{{ $maskName }}"
         type="text"
         class="{{ $class }}"
-        wire:model.debounce.250ms='maskedValue'
+        wire:model.debounce.500ms='maskedValue'
         @if($required) required @endif
     />
     <script src="https://unpkg.com/imask@7.1.3/dist/imask.js"></script>
