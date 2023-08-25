@@ -18,8 +18,8 @@
                         mask: Number,
                         scale: 2,
                         padFractionalZeros: true,
-                        thousandsSeparator: ',',
-                        radix: '.',
+                        thousandsSeparator: '.',
+                        radix: ',',
                         mapToRadix: []
                     }
                 }
