@@ -32,7 +32,7 @@
         // });
 
         window.addEventListener('{{ $maskId }}-contentInitialized', event => {
-            window.{{ $maskId }}mask.value = @this.value;
+            window.{{ $maskId }}mask.value = "{{ $value }}";
         });
 
         window.addEventListener('{{ $maskId }}-valueUpdated', event => {
