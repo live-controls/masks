@@ -17,11 +17,11 @@ class MaskComponent extends Component
     public $maskedValue;
 
     public function mount(){
-        $this->dispatchBrowserEvent($this->maskId.'-contentInitialized');
+        $this->dispatch($this->maskId.'-contentInitialized');
     }
 
     public function updatedMaskedValue($value)
     {
-        $this->dispatchBrowserEvent($this->maskId.'-valueUpdated', ['value' => $value]);
+        $this->dispatch($this->maskId.'-valueUpdated', value: $value);
     }
 }
