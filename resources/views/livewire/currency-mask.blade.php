@@ -7,7 +7,6 @@
         wire:model.debounce.500ms='maskedValue'
         @if($required) required @endif
     />
-    <script src="https://unpkg.com/imask@7.1.3/dist/imask.js"></script>
     <script type="text/javascript">
         window.{{ $maskId }}mask = IMask(
             document.getElementById('{{ $maskId }}'),
