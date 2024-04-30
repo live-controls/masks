@@ -4,7 +4,7 @@
         name="{{ $maskName }}"
         type="text"
         class="{{ $class }}"
-        wire:model.live.debounce.500ms='maskedValue'
+        wire:model.live='maskedValue'
         @if($required) required @endif
     />
 
@@ -13,8 +13,7 @@
             id="{{ $unmaskedId }}"
             name="{{ $unmaskedId }}"
             type="hidden"
-            class="{{ $class }}"
-            wire:model="value"
+            wire:model.live='value'
         />
     @endif
 
@@ -38,7 +37,7 @@
         );
 
         window.addEventListener('{{ $maskId }}-valueUpdated', event => {
-            @this.value = window.{{ $maskId }}mask.unmaskedValue;
+            document.getElementById('{{ $unmaskedId }}').value = window.{{ $maskId }}mask.unmaskedValue;
         });
     </script>
     @endscript
