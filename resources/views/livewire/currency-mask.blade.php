@@ -12,8 +12,10 @@
         <input
             id="{{ $unmaskedId }}"
             name="{{ $unmaskedId }}"
-            type="hidden"
+            type="text"
+            class="hidden"
             wire:model.live='value'
+            value="{{ $value }}"
         />
     @endif
 
