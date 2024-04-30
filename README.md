@@ -47,4 +47,14 @@ php artisan vendor:publish --tag="livecontrols.masks.config";
 ```
 
 ## Usage
+```
+@livewire('livecontrols-currencymask', [
+'maskId' => 'someUniqueId',
+'maskName' => 'someUniqueName',
+'class' => 'input input-bordered w-full',
+'required' => true,
+'value' => 'set to something if you want to use it for update',
+'currencyString' => 'R$'
+], key())
 
+```
