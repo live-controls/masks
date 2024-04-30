@@ -51,6 +51,8 @@ php artisan vendor:publish --tag="livecontrols.masks.config";
 @livewire('livecontrols-currencymask', [
 'maskId' => 'someUniqueId',
 'maskName' => 'someUniqueName',
+'unmaskedId' => 'idforhiddeninput',
+'unmaskedName' => 'nameforhiddeninput',
 'class' => 'input input-bordered w-full',
 'required' => true,
 'value' => 'set to something if you want to use it for update',

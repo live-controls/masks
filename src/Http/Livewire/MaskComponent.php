@@ -9,6 +9,9 @@ class MaskComponent extends Component
     public $maskId = 'value';
     public $maskName = 'value';
 
+    public $unmaskedId;
+    public $unmaskedName;
+
     public $class = 'input input-bordered w-full';
 
     public $required = false;

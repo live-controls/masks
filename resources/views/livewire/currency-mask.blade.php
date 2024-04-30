@@ -8,6 +8,16 @@
         @if($required) required @endif
     />
 
+    @if(!is_null($unmaskedId))
+        <input
+            id="{{ $unmaskedId }}"
+            name="{{ $unmaskedId }}"
+            type="hidden"
+            class="{{ $class }}"
+            wire:model="value"
+        />
+    @endif
+
     @script
     <script type="text/javascript">
         window.{{ $maskId }}mask = IMask(
