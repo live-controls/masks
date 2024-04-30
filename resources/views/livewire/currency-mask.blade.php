@@ -4,9 +4,11 @@
         name="{{ $maskName }}"
         type="text"
         class="{{ $class }}"
-        wire:model.debounce.500ms='maskedValue'
+        wire:model.live.debounce.500ms='maskedValue'
         @if($required) required @endif
     />
+
+    @script
     <script type="text/javascript">
         window.{{ $maskId }}mask = IMask(
             document.getElementById('{{ $maskId }}'),
@@ -25,19 +27,9 @@
             }
         );
 
-        // document.addEventListener("DOMContentLoaded", () => {
-        //     @if(!is_null($value))
-        //         window.{{ $maskId }}mask.value = "{{ $value }}";
-        //     @endif
-        // });
-
-        window.addEventListener('{{ $maskId }}-contentInitialized', event => {
-            window.{{ $maskId }}mask.value = "{{ $value }}";
-        });
-
         window.addEventListener('{{ $maskId }}-valueUpdated', event => {
             @this.value = window.{{ $maskId }}mask.unmaskedValue;
         });
     </script>
-
+    @endscript
 </div>
