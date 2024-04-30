@@ -13,7 +13,7 @@
             id="{{ $unmaskedId }}"
             name="{{ $unmaskedId }}"
             type="text"
-            class="hidden"
+            style="display:none;"
             wire:model.live='value'
             value="{{ $value }}"
         />
