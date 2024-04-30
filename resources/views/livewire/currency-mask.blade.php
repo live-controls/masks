@@ -25,10 +25,14 @@
             }
         );
 
-        document.addEventListener("DOMContentLoaded", () => {
-            @if(!is_null($value))
-                window.{{ $maskId }}mask.value = "{{ $value }}";
-            @endif
+        // document.addEventListener("DOMContentLoaded", () => {
+        //     @if(!is_null($value))
+        //         window.{{ $maskId }}mask.value = "{{ $value }}";
+        //     @endif
+        // });
+
+        window.addEventListener('{{ $maskId }}-contentInitialized', event => {
+            window.{{ $maskId }}mask.value = @this.value;
         });
 
         window.addEventListener('{{ $maskId }}-valueUpdated', event => {

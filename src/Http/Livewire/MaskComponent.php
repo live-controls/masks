@@ -16,6 +16,9 @@ class MaskComponent extends Component
     public $value;
     public $maskedValue;
 
+    public function mount(){
+        $this->dispatchBrowserEvent($this->maskId.'-contentInitialized');
+    }
 
     public function updatedMaskedValue($value)
     {
