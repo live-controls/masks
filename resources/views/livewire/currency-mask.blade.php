@@ -40,6 +40,7 @@
 
         window.addEventListener('{{ $maskId }}-valueUpdated', event => {
             document.getElementById('{{ $unmaskedId }}').value = window.{{ $maskId }}mask.unmaskedValue;
+            $wire.dispatch('{{ $updateCallName }}', { value: window.{{ $maskId }}mask.unmaskedValue});
         });
     </script>
     @endscript

@@ -26,13 +26,13 @@ class MaskComponent extends Component
         $this->dispatch($this->maskId.'-contentInitialized');
 
         if(is_null($this->updateCallName)){
-            $this->updateCallName = $this->maskId.'-valueUpdated';
+            $this->updateCallName = $this->maskId.'-updated';
         }
     }
 
     public function updatedMaskedValue($value)
     {
-        $this->dispatch($this->updateCallName, value: $value);
+        $this->dispatch($this->maskId.'-valueUpdated', value: $value);
     }
 
     public function updatedValue($value)
