@@ -56,7 +56,8 @@ php artisan vendor:publish --tag="livecontrols.masks.config";
 'class' => 'input input-bordered w-full',
 'required' => true,
 'value' => 'set to something if you want to use it for update',
-'currencyString' => 'R$'
+'currencyString' => 'R$',
+'updateCallName' => 'WillBeFiredIfValueGotUpdated'
 ], key())
 
 ```
