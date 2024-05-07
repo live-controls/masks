@@ -19,12 +19,24 @@ class MaskComponent extends Component
     public $value;
     public $maskedValue;
 
+    public $updateCallName;
+
+
     public function mount(){
         $this->dispatch($this->maskId.'-contentInitialized');
+
+        if(is_null($this->updateCallName)){
+            $this->updateCallName = $this->maskId.'-valueUpdated';
+        }
     }
 
     public function updatedMaskedValue($value)
     {
-        $this->dispatch($this->maskId.'-valueUpdated', value: $value);
+        $this->dispatch($this->updateCallName, value: $value);
+    }
+
+    public function updatedValue($value)
+    {
+        $this->dispatch($this->maskId.'-unmaskedUpdate', value: $value);
     }
 }
