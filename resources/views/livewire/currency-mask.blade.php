@@ -4,7 +4,6 @@
         name="{{ $maskName }}"
         type="text"
         class="{{ $class }}"
-        wire:model.live='maskedValue'
         @if($required) required @endif
     />
 
@@ -38,9 +37,13 @@
             }
         );
 
-        window.addEventListener('{{ $maskId }}-valueUpdated', event => {
-            document.getElementById('{{ $unmaskedId }}').value = window.{{ $maskId }}mask.unmaskedValue;
-            $wire.dispatch('{{ $updateCallName }}', { value: window.{{ $maskId }}mask.unmaskedValue});
+        $wire.on('update-mask-value', (event) => {
+            window.{{ $maskId }}mask.unmaskedValue = "" + event.value;
+        });
+
+        window.{{ $maskId }}mask.on('accept', () => {
+            $wire.value = Number(window.{{ $maskId }}mask.unmaskedValue);
+            $wire.dispatch('{{ $updateCallName }}', { value: $wire.value });
         });
     </script>
     @endscript

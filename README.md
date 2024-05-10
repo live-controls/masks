@@ -61,3 +61,8 @@ php artisan vendor:publish --tag="livecontrols.masks.config";
 ], key())
 
 ```
+
+To update a value call:
+```
+$this->dispatch('update-mask-value-maskId', value: 500);
+```
