@@ -10,6 +10,7 @@ use LiveControls\Masks\Http\Livewire\CnpjMask;
 use LiveControls\Masks\Http\Livewire\CpfCnpjMask;
 use LiveControls\Masks\Http\Livewire\CpfMask;
 use LiveControls\Masks\Http\Livewire\CurrencyMask;
+use LiveControls\Masks\Http\Livewire\CustomMask;
 
 class MasksServiceProvider extends ServiceProvider
 {
@@ -27,6 +28,7 @@ class MasksServiceProvider extends ServiceProvider
       Livewire::component('livecontrols-cnpjmask', CnpjMask::class);
       Livewire::component('livecontrols-cpfcnpjmask', CpfCnpjMask::class);
       Livewire::component('livecontrols-cepmask', CepMask::class);
+      Livewire::component('livecontrols-custommask', CustomMask::class);
 
       Blade::directive('livecontrolsMasks', function () {
         if(config('livecontrols_masks.local_files', false) === false){
