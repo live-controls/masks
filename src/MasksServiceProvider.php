@@ -5,6 +5,7 @@ namespace LiveControls\Masks;
 use Illuminate\Support\ServiceProvider;
 use Livewire\Livewire;
 use Illuminate\Support\Facades\Blade;
+use LiveControls\Masks\Http\Livewire\CepMask;
 use LiveControls\Masks\Http\Livewire\CnpjMask;
 use LiveControls\Masks\Http\Livewire\CpfCnpjMask;
 use LiveControls\Masks\Http\Livewire\CpfMask;
@@ -25,6 +26,7 @@ class MasksServiceProvider extends ServiceProvider
       Livewire::component('livecontrols-cpfmask', CpfMask::class);
       Livewire::component('livecontrols-cnpjmask', CnpjMask::class);
       Livewire::component('livecontrols-cpfcnpjmask', CpfCnpjMask::class);
+      Livewire::component('livecontrols-cepmask', CepMask::class);
 
       Blade::directive('livecontrolsMasks', function () {
         if(config('livecontrols_masks.local_files', false) === false){
